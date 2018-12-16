@@ -17,6 +17,12 @@ const Player = props => (
     >
       -
     </span>
+    <span
+      className="player__btn--remove"
+      onClick={() => props.onPlayerRemove()}
+    >
+      Remove
+    </span>
   </li>
 );
 

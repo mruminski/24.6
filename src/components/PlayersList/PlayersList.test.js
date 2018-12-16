@@ -42,10 +42,35 @@ it("should return if onScoreUpdate was invoked", () => {
     <PlayersList players={playersArr} onScoreUpdate={mockedOnScoreUpdate} />
   );
 
-  const firstPlayer = playerComponent.find(Player).last();
-  const onPlayerScoreChange = firstPlayer.prop("onPlayerScoreChange");
+  const lastPlayer = playerComponent.find(Player).last();
+  const onPlayerScoreChange = lastPlayer.prop("onPlayerScoreChange");
 
   onPlayerScoreChange(7);
 
   expect(mockedOnScoreUpdate).toBeCalledWith(1, 7);
+});
+
+it("should return if onPlayerRemove invoked", () => {
+  const playersArr = [
+    {
+      name: "Matt",
+      score: 7
+    },
+    {
+      name: "Bob",
+      score: 9
+    }
+  ];
+
+  const mockedOnPlayerRemove = jest.fn();
+  const playerComponent = shallow(
+    <PlayersList players={playersArr} onPlayerRemove={mockedOnPlayerRemove} />
+  );
+
+  const lastPlayer = playerComponent.find(Player).last();
+  const playerToRemove = lastPlayer.prop("onPlayerRemove");
+
+  playerToRemove("Bob");
+
+  expect(mockedOnPlayerRemove).toBeCalledWith("Bob");
 });

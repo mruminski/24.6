@@ -49,3 +49,15 @@ it("should call onPlayerScoreChange with --", () => {
 
   expect(mockedOnPlayerScoreChange).toBeCalledWith(-1);
 });
+
+it("should call onPlayerRemove", () => {
+  const mockedOnPlayerRemove = jest.fn();
+  const playerComponent = shallow(
+    <Player onPlayerRemove={mockedOnPlayerRemove} />
+  );
+
+  const removeBtn = playerComponent.find(".player__btn--remove");
+  removeBtn.simulate("click");
+
+  expect(mockedOnPlayerRemove).toBeCalled();
+});
