@@ -1,8 +1,19 @@
 .addPlayer {
+  margin: 30px;
+  max-width: 600px;
 }
 
 .addPlayer__input {
+  display: inline-block;
+  width: 350px;
+  padding: 3px 3px;
+  margin-right: 10px;
 }
 
 .addPlayer__submit {
+  display: inline-block;
+  font-size: 1.125rem;
+  color: orangered;
+  border: 1px solid orangered;
+  background-color: transparent;
 }

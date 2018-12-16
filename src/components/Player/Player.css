@@ -1,8 +1,28 @@
-player__name {
+.player__name {
+  display: inline-block;
+  width: 200px;
+  font-size: 1.6rem;
+  color: olivedrab;
 }
 
-player__score {
+.player__score {
+  display: inline-block;
+  width: 75px;
+  font-size: 1.8rem;
+  font-weight: bold;
 }
 
-player__btn {
+.player__btn--add,
+.player__btn--subtract {
+  display: inline-block;
+  width: 25px;
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin: 0 20px;
+}
+
+.player__btn--remove {
+  padding: 1px 3px;
+  color: red;
+  border: 1px solid red;
 }
